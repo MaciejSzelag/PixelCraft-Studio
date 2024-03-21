@@ -1,0 +1,99 @@
+footer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: $color7;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    z-index: 100;
+    .section-flex-start{
+        align-items: flex-start;
+    }
+
+    .footer-section {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 3rem 0;
+
+        color: $color1;
+
+        p {
+            font-size: 2vh;
+            color: $color8;
+            text-align: center;
+        }
+
+        .foot-list {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            font-size: 2.5vh;
+            margin-top: 4vh;
+            // background-color: brown;
+
+            .list-title {
+                font-size: 3.5vh;
+                color: $color8;
+                margin-bottom: 3rem;
+            }
+
+            .ul-row {
+                display: flex;
+            }
+
+            ul {
+
+
+                li {
+                    width: auto;
+                    list-style: none;
+
+                    .fa {
+                        margin: 0 2rem;
+                        font-size: 5vh;
+                        color: $color7;
+                        filter: drop-shadow(.2rem .2rem .1rem $color8) drop-shadow(.2rem .2rem .1rem $color1) drop-shadow(.2rem .2rem .1rem $color7);
+                    }
+
+                    a {
+                        // font-size: 5vh;
+                        color: $color1;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-section:last-child {
+        border-top: .1rem solid $color8;
+    }
+
+}
+
+@media screen and (min-width:1200px) {
+    footer {
+
+
+        .footer-section {
+
+            flex-direction: row;
+
+            p {
+                font-size: 2vh;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,155 @@
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    background-color: $color1;
+    animation: hide-block 8s linear both;
+}
+
+.element-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 8vh;
+}
+
+.element-wrap::after {
+    position: absolute;
+    content: "";
+    width: 20vw;
+    height: 1rem;
+    background-color: $color7;
+    // left: -5rem;
+    bottom: 0;
+    transform: translateX(.5rem);
+    animation: anim 4.5s 1s cubic-bezier(0.73, -0.15, 0.58, 1) 1 both;
+    ;
+}
+
+
+
+.element {
+    font-size: 10vh;
+    color: $color7;
+
+    font-family: "Vina Sans", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    overflow: hidden;
+
+    .hidden {
+        display: block;
+        width: auto;
+        height: auto;
+        opacity: 0;
+        transition: 1s cubic-bezier(0.73, -0.15, 0.58, 1);
+        transform: translateY(100%);
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .element {
+        font-size: 30vh;
+
+    }
+
+    .element-wrap::after {
+
+        left: -5rem;
+
+    }
+
+    .element-wrap::before {
+        position: absolute;
+        content: "";
+        width: .5rem;
+        height: 1rem;
+        background-color: $color7;
+        left: 0;
+        bottom: -5rem;
+        transform: translateY(5px);
+        animation: showUp 4s cubic-bezier(0.73, -0.15, 0.58, 1) 1 both;
+
+
+    }
+}
+
+@keyframes anim {
+    0% {
+        // left: -50px;
+        opacity: 0;
+
+        height: .2rem;
+        width: .2rem;
+
+    }
+
+    40% {
+        opacity: 1;
+        height: .2rem;
+        width: 100%;
+
+    }
+
+    80% {
+        opacity: 1;
+        height: .2rem;
+        width: 100%;
+
+    }
+
+    100% {
+        // left: -50px;
+        opacity: 0;
+        height: 0;
+        width: 0;
+
+    }
+
+}
+
+@keyframes showUp {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    30% {
+        width: .5rem;
+        height: 20rem;
+    }
+
+    70% {
+        width: .5rem;
+        height: 20rem;
+    }
+
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+@keyframes hide-block {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+
+    70% {
+        display: block;
+        opacity: 1;
+    }
+
+    80% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
