@@ -4,9 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuCross = document.querySelector(".lines-wrap");
     const navBtns = document.querySelectorAll(".nav-btn");
     let active = true;
-    // const socialMediaBtns = document.querySelectorAll(".nav-btn");
-
-
 
     // Get all nav elements with the data-name attribute
     const nav_btns = document.querySelectorAll('a[data-name]');
@@ -48,11 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 
-
-
-
-    window.onscroll = function () { myFunction() };
-
+    // window.onscroll = function () { myFunction() };
     // Get all the elements with class "section-card-container"
     var sections = document.querySelectorAll(".section-card-container");
 
@@ -64,16 +57,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add the sticky class to the section when you reach its scroll position. Remove "sticky" when you leave the scroll position
     function myFunction() {
-        var scrollPosition = window.pageYOffset;
+        var scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
         sections.forEach(function (section, index) {
-            if (scrollPosition >= stickies[index]) {
+            if (scrollPosition > stickies[index]) {
                 section.classList.add("sticky");
             } else {
                 section.classList.remove("sticky");
             }
         });
     }
+    window.addEventListener('scroll', myFunction);
 
     // Przejdź przez wszystkie sekcje i nadaj im zwiększający się z-index
     sections.forEach(function (section, index) {
@@ -84,22 +78,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const blockCard = document.querySelector(".floating-ball-card")
     const floatingCircle = document.querySelector(".floating-circle")
+
+
+
     if (window.innerWidth >= 1200) {
+        if (blockCard != null) {
+            blockCard.addEventListener('mousemove', function (event) {
+                var mouseX = event.clientX; // współrzędna X kursora względem lewego górnego rogu okna przeglądarki
+                var mouseY = event.clientY; // współrzędna Y kursora względem lewego górnego rogu okna przeglądarki
+                floatingCircle.style.setProperty("top", `${mouseY}px`)
+                floatingCircle.style.setProperty("left", `${mouseX}px`)
 
-        blockCard.addEventListener('mousemove', function (event) {
-            var mouseX = event.clientX; // współrzędna X kursora względem lewego górnego rogu okna przeglądarki
-            var mouseY = event.clientY; // współrzędna Y kursora względem lewego górnego rogu okna przeglądarki
-
-
-            floatingCircle.style.setProperty("top", `${mouseY}px`)
-            floatingCircle.style.setProperty("left", `${mouseX}px`)
-
-        });
+            });
+        }
 
     }
-
-
-
 
     var coll = document.getElementsByClassName("collapsible");
     var i;
@@ -121,18 +114,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-
     const copyTxt = document.getElementById("at-2").cloneNode(true);
     document.getElementById("banner-2").appendChild(copyTxt);
 
 
     const allContactLinks = document.querySelectorAll(".contact-link");
-    const mailToContactURL = "mailto:szelag.maciej@gmail.com";
+    const mailToContactURL = "mailto:webby.maciej@gmail.com";
     for (let i = 0; i < allContactLinks.length; i++) {
         allContactLinks[i].setAttribute('href', mailToContactURL);
     }
 
-    const elements = document.querySelectorAll('.hidden');
+    // const elements = document.querySelectorAll('.hidden');
 
 
 

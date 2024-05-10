@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         constructor(x, y) {
             this.x = x;
             this.y = y;
-            this.size = Math.random() * 5 + 1;
+            this.size = Math.random() * 1;
             this.weight = Math.random() * 0.015;
             this.directionX = -1;
             this.color = "rgba(255,255,255,0.2)"
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     function init() {
         particlesArray = [];
-        const numberOfParticles = 80;
+        const numberOfParticles = 100;
         for (let i = 0; i < numberOfParticles; i++) {
             const x = Math.random() * canvas.width;
             const y = Math.random() * canvas.height
