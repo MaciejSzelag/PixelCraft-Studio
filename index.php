@@ -31,7 +31,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
-<div class="container full-screen display-none fixed">
+<!-- <div class="container full-screen display-none fixed">
     <div class="row">
         <div class="element-wrap">
             <div class="element"><span class="hidden">M</span></div>
@@ -44,7 +44,7 @@
             <div class="element"><span class="hidden">G</span></div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <nav>
@@ -473,19 +473,48 @@
         </div>
     </div>
 </section>
+
+<section class="normal-section" id="Contact">
+    <div class="section-box section-box-row ">
+        <div class="contact-txt">
+            <h1 class="section-h1 h1-bold">Contact Form</h1>
+            <div class="contact_form">
+                <form action="send_email.php" method="POST">
+
+                    <label for="name">Name</label>
+                    <input class="if-empty" type="text" id="name" name="name" placeholder="Your name.." required>
+                    <label for="fname">Your email</label>
+                    <input class="if-empty" type="text" id="email" name="email" placeholder="Your email.." required>
+
+
+                    <label for="subject">Subject</label>
+                    <textarea class="if-empty" type="text" id="subject" name="subject" placeholder="Write something.." style="height:200px"
+                        required></textarea>
+
+                    <input type="submit" name="send_email"value="Send" id="mail_btn">
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+<div class="loading">
+    <div class="loading_wrap">
+        <div class="load_sun">
+            <div class="load_moon">
+                <div class="moons_luna"></div>
+            </div>
+        </div>
+    </div>
+</div>
 <section class="normal-section" id="Contact">
     <div class="section-box section-box-row ">
         <div class="contact-txt">
             <h1 class="section-h1 h1-bold">Let's turn your
                 ideas into reality. </h1>
-            <h1 class="section-h1"><a class="contact-link" href="javaScript loop">Contact me</a>and
-                let's work
-                together !</h1>
         </div>
-        <div class="circle-contact">
-            <div class="circle-container"><a class="contact-link" href="javaScript loop">Contact me</a>
-            </div>
-        </div>
+
     </div>
 </section>
 <footer>

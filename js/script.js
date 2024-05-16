@@ -157,3 +157,30 @@ document.addEventListener("DOMContentLoaded", function () {
     intro();
 
 })
+
+const mail_btn = document.getElementById("mail_btn");
+const inputs = document.querySelectorAll('input[type="text"]');
+const animatedElement = document.querySelector(".loading");
+
+mail_btn.addEventListener('click', function () {
+    // Get all input fields
+    const inputs = document.querySelectorAll('.if-empty');
+    let allFilled = true;
+
+    // Remove animation class if already present
+
+    animatedElement.classList.remove('animate');
+
+    // Check if all inputs are filled
+    inputs.forEach(input => {
+        if (input.value.trim() === "") {
+            allFilled = false;
+        }
+    });
+
+    // If all inputs are filled, run the animation
+    if (allFilled) {
+
+        animatedElement.classList.add('loading-active');
+    }
+});
